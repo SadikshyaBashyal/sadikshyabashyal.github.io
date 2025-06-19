@@ -1,0 +1,223 @@
+#root {
+  text-align: center;
+  width: 100vw;
+  overflow: hidden;
+}
+.global-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  /* The animated background and waves from Landing.css: */
+  background: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(255, 255, 255, 0.2), transparent),
+    linear-gradient(180deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+  background-repeat: repeat, repeat, repeat, repeat, repeat, no-repeat;
+  background-size: 200px 100px, 200px 100px, 200px 100px, 200px 100px, 200px 100px, 100% 100%;
+  animation: oceanFloat 20s linear infinite;
+}
+
+.global-bg::before,
+.global-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.global-bg::before {
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  animation: wave1 8s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.global-bg::after {
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+  animation: wave2 6s ease-in-out infinite reverse;
+  transform-origin: center bottom;
+}
+
+@keyframes wave1 {
+  0%, 100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+  25% { transform: translateX(-25%) translateY(-10px) rotate(1deg); }
+  50% { transform: translateX(0%) translateY(-5px) rotate(0deg); }
+  75% { transform: translateX(-75%) translateY(-15px) rotate(-1deg); }
+}
+
+@keyframes wave2 {
+  0%, 100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+  25% { transform: translateX(-75%) translateY(-15px) rotate(-1deg); }
+  50% { transform: translateX(0%) translateY(-5px) rotate(0deg); }
+  75% { transform: translateX(-25%) translateY(-10px) rotate(1deg); }
+}
+
+@keyframes oceanFloat {
+  0% { background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0% 0%; }
+  100% { background-position: 0px -100px, 0px -100px, 0px -100px, 0px -100px, 0px -100px, 0% 0%; }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App Layout */
+.App {
+  min-height: 100vh;
+}
+
+/* Main content */
+main {
+  padding-top: 50px; /* Removed to allow full-screen landing page */
+}
+
+/* Section styling */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+/* Typography */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Section backgrounds */
+#home {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+#home h1,
+#home p {
+  color: white;
+}
+
+#about {
+  background: #f8f9fa;
+}
+
+#projects {
+  background: white;
+}
+
+#skills {
+  background: #f8f9fa;
+}
+
+#contact {
+  background: #333;
+  color: white;
+}
+
+#contact h2,
+#contact p {
+  color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  h1, h2 {
+    color: #fff;
+  }
+  
+  p {
+    color: #ccc;
+  }
+  
+  #about,
+  #skills {
+    background: #1a1a1a;
+  }
+  
+  #projects {
+    background: #2d2d2d;
+  }
+}

@@ -1,0 +1,327 @@
+/* About Page Styles */
+.about-section {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  padding: 4rem 0;
+  background: transparent;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(45deg, #ff6b9d, #c44569);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* About Content */
+.about-content {
+  display: grid;
+  gap: 2rem;
+}
+
+/* About Cards */
+.about-card {
+  background: rgba(255, 255, 255, 0.518);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Personal Info Card */
+.about-card:first-child {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 25%;
+  background: linear-gradient(45deg, #ff6b9d, #c44569);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 4rem;
+  box-shadow: 0 10px 20px rgba(255, 107, 157, 0.3);
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgb(12, 80, 12);
+  margin-bottom: 1rem;
+}
+
+/* Card Icons */
+.card-icon {
+  /* display: grid; */
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff6b9d, #c44569);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Education Items */
+.education-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.education-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.education-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.education-item p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.education-item p:last-child {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Interests Grid */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.interest-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: #f8f9fabc;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.interest-item:hover {
+  background: linear-gradient(45deg, rgba(69, 196, 177, 0.536), rgba(255, 107, 156, 0.404));
+  transform: translateX(5px);
+}
+
+.interest-item svg {
+  color: #ff6b9d;
+  font-size: 1.2rem;
+}
+
+.interest-item span {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Button Styles */
+.btn-outline {
+  background: transparent;
+  color: #ff6b9d;
+  border: 2px solid #ff6b9d;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.btn-outline:hover {
+  background: #ff6b9d;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-card:first-child {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .profile-placeholder {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .about-section {
+    background: #1a1a1a;
+  }
+
+  .about-card {
+    background: #2d2d2d;
+    border-color: rgba(255, 107, 157, 0.2);
+  }
+
+  .section-title,
+  .about-text h3,
+  .card-content h3,
+  .education-item h4,
+  .interest-item span {
+    color: #fff;
+  }
+
+  .section-subtitle,
+  .about-text p,
+  .education-item p {
+    color: #ccc;
+  }
+
+  .interest-item {
+    background: #3a3a3a;
+  }
+
+  .interest-item:hover {
+    background: rgba(255, 107, 157, 0.2);
+  }
+
+  .education-item {
+    border-bottom-color: #444;
+  }
+} 
